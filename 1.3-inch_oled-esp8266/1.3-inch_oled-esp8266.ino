@@ -2,26 +2,27 @@
 #include "SH1106Wire.h"
 SH1106Wire display(0x3c, D2, D1);
 
-void setup() {
+void setup() { 
   Serial.begin(9600);
 
-  display.init();
-  display.flipScreenVertically();
-  display.setFont(ArialMT_Plain_16);
-  display.setTextAlignment(TEXT_ALIGN_LEFT);
+  display.init(); // initalise the display 
+  display.flipScreenVertically(); // flip display vertically, i like it vertically so...
+  display.setFont(ArialMT_Plain_16); // set the font and size you can change 16 to what ever size you want
+  display.setTextAlignment(TEXT_ALIGN_LEFT); // sets the alignment to left( you can use center, right also)
 
 }
 
 void loop() {
-  // convert Integer to string for display to show
   
+  // convert Integer to string ( as display only have function to show strings)
   char str[20];    //create an empty string to store number
-  int number = 10210809;
-  sprintf(str, "%d", number);  // here value of number is converted to string and saved in str
+  int number = 11220910; 
+  sprintf(str, "%d", number);  // here value of integer is converted to string and saved in str
 
   display.clear(); // clear display 
-  display.drawString(0,0, "Hello World! : ");
-  display.drawString(68,0, str); // display int
-  display.drawString(100,0, "mm");
-  display.display(); // display the strings
+  
+  display.drawString(0,0, "Hello! : ");  // the 0,0 is the coordinate of word on display and there are 128*64 (1.3")
+  display.drawString(0,20, str); // display integer value // here 0,20 shows that this word will be 20p below first word
+  
+  display.display(); // display the functions above
 }

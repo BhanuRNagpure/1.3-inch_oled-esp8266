@@ -9,7 +9,7 @@
 
 // I2C Scanner
 
-// for oled display connect (SDA, SCL) (D1, D2) respictively 
+// for oled display connect (SCL, SDA) (D1, D2) respictively 
 // and check if device is found
 
 #include <Wire.h>

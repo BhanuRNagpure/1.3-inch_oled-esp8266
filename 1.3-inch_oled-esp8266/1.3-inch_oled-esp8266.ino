@@ -1,6 +1,6 @@
-#include <Wire.h>
+#include <Wire.h> // make sure esp8266 is installed (in boards)
 #include "SH1106Wire.h"
-SH1106Wire display(0x3c, D2, D1);
+SH1106Wire display(0x3c, D2, D1); // (d2-- sda) (d1--scl)
 
 void setup() { 
   Serial.begin(9600);

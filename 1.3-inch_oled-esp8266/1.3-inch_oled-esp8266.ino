@@ -1,4 +1,3 @@
-./
 #include <Wire.h>
 #include "SH1106Wire.h"
 SH1106Wire display(0x3c, D2, D1);
